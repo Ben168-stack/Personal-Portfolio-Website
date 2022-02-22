@@ -1,0 +1,36 @@
+body{
+    padding: 50px;
+    background-color: skyblue;
+}
+
+#container{
+    margin-top: 200px;
+    height: 300px;
+    text-align: center;
+}
+
+#broom{
+    /* animation-name: fly;
+    Set animation variable name to fly
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    The animation loops forever cause of 'infinte' */
+
+    animation: fly 2s infinite /* Shorter version*/
+}
+/* The fly variable name helps keyframes identify the animation to run */
+
+@keyframes fly{
+    0%{
+        transform: translateY(30px);
+    }
+    50%{
+        transform:translateY(100px);
+    }
+    100%{
+        transform: translateY(30px);
+    }
+    /* The img first starts at 30px down the Y-axis,
+    at 50% of the animation-duration the img goes down to 100px
+    at the Y-axis, Finally at 100% the img goes back up to 30px at the Y-axis */
+}

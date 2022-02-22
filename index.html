@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benjamin's Personal Portfolio</title>
+    <meta name="author" content="Tan Ch'ing Jui Benjamin" />
+    <meta
+      name="keywords"
+      content="Main Page,Intro,Services, About Me,3D Card,Footer"
+    />
+    <meta name="title" content="Benjamin's Portfolio" />
+    <meta
+      name="description"
+      content="Hi my name's Benjamin Visit My Portfolio here!"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/Ben168-stack/Personal-Website/0854885c2f42a6ffb530c2e2d9a82d926f6aed5b/img/apple.jpg"
+    />
+    <script
+      src="https://kit.fontawesome.com/57c1bc4a0b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="icon" type="image/jpg" href="apple.jpg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Just a reminder a spacing in classes mean it has
+        2 class names -->
+      <div class="logo">
+        <i class="fas fa-apple-alt" aria-label="An apple logo"></i>
+      </div>
+      <!-- Navigation -->
+      <button class="nav-toggle" aria-label="Toggle Navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item">
+            <a href="#services" class="nav__link">Services</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About Me</a>
+          </li>
+          <li class="nav__item">
+            <a href="Portfolio/portfolio.html" class="nav__link">My Projects</a>
+          </li>
+          <li class="nav__item">
+            <a href="./FormPage/Form.html" class="nav__link">Contact Me</a>
+          </li>
+          <li class="nav__item">
+            <a href="#Footer" class="nav__link">Footer</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Introduction -->
+    <section class="intro" id="home">
+      <h1 class="section__title section__title--intro" id="type" class="Text">
+        Hi, I'm <strong>Benjamin</strong>
+      </h1>
+
+      <p class="section__subtitle section__subtitle--intro">NYP Student</p>
+      <img
+        src="images/Me2.jpg"
+        alt="A picture of me with a hat"
+        class="intro__img"
+      />
+    </section>
+
+    <!-- My services -->
+    <section class="my-services" id="services">
+      <h2 class="section__title section__title--services">What I do</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Web Development</h3>
+          <p>
+            I'm still a complete beginner to web development but as I continue
+            to view more sites and tutorials my interest for it grows as I find
+            out more and more of what I can build with html,css and Javascript.
+          </p>
+        </div>
+        <!-- / service -->
+
+        <div class="service">
+          <h3>Python</h3>
+          <p>
+            I'm taking python as one of my modules in my course CIP(Common ICT
+            Programn) and its a a language that I can pick up quickly. Although
+            I still have a long way to go I'm suprised of how much I'm able to
+            grasp of the language in just a short few weeks.
+          </p>
+        </div>
+        <!-- / service -->
+
+        <div class="service">
+          <h3>Development with CSS</h3>
+          <p>
+            I started trying to pick up CSS after learning some basics of html.
+            Wasn't sure what I could do with CSS at the time, but it happens to
+            be alot of stuff. Fonts, Colors, Gradients, Animations and so much
+            more. I hope to pick up some of these CSS functions quickly to
+            really be able to build something that would look pretty cool.
+          </p>
+        </div>
+        <!-- / service -->
+      </div>
+      <!-- / services -->
+
+      <a href="./Portfolio/portfolio.html" class="btn">My Work</a>
+    </section>
+
+    <!-- About Me -->
+    <section class="about-me" id="about">
+      <h2 class="section__title section__title--about">Who I am</h2>
+      <p class="section__subtitle section__subtitle--about">An NYP Freshmen</p>
+
+      <div class="about-me__body">
+        <p>
+          Hey, I'm just some guy who is enthusiastic about programming. The
+          World of IT is a big place and I want my small part of it I hope I
+          will able to work in this industry and better understand how this
+          industry works. In time I want to advance my skills to be able to
+          build something really cool.
+        </p>
+        <p>
+          I'm currently a freshmen at Nanyang Polytechnic and I'm in the course
+          CIP(Common Ict Programn).My favourite modules are web development and
+          programming essentials as in the modules I'm able to learn how to
+          build some cool stuff. I also enjoy computing mathematics and infocomn
+          security despite the module being very heavy on theory. I just find
+          infocomn security intresting in a way the different security protcols,
+          malware, est and I always sort of liked math as a subject.
+        </p>
+      </div>
+      <img
+        src="images/DefaultMe.jpg"
+        alt="Another image of me without a hat"
+        class="about-me__img"
+      />
+    </section>
+
+    <!-- CardFlip -->
+    <hr />
+    <section id="cardFlip">
+      <div class="card">
+        <div class="card__content">
+          <div class="card__front">
+            <h3 class="card__title">Hi There</h3>
+            <p class="card__subtitle">Time for some fun</p>
+          </div>
+
+          <div class="card__back">
+            <p class="card__body">Enjoying the site so far?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="Footer">
+      <!-- Replace with your own email -->
+      <a href="./FormPage/Form.html" id="footerLink">Hello@Ben.dev</a>
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a
+            href="https://codepen.io/ben168-stack"
+            class="social-list__link"
+            target="_blank"
+            ><i class="fab fa-codepen" aria-label="Codepen logo"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a
+            href="https://www.instagram.com/benjamintanchingjui168/"
+            class="social-list__link"
+            target="_blank"
+            ><i class="fab fa-instagram" aria-label="Instagram logo"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a
+            href="https://twitter.com/?lang=en"
+            class="social-list__link"
+            target="_blank"
+            ><i class="fab fa-twitter" aria-label="Twitter logo"></i
+          ></a>
+        </li>
+        <li class="social-list__item">
+          <a
+            href="https://github.com/Ben168-stack/"
+            class="social-list__link"
+            target="_blank"
+            ><i class="fab fa-github" aria-label="Github logo"></i
+          ></a>
+        </li>
+      </ul>
+      <a href="#home" id="top">Back to Top</a>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

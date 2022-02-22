@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+/* To fix padding,border problems. boxsizing to all will ensure
+that padding and borders are included in the width and height
+good practice to set this property to all elements */
+
+/* Custom Properties, Update these for your own design */
+
+:root{
+    --ff-primary:'Source Sans Pro',sans-serif;
+    --ff-secondary:'Source Code Pro', monospace;
+    /* font family */
+    /* font weight */
+    --fw-regular: 300;
+    --fw-bold: 900;
+    /* color-light */
+    --clr-light: #fff;
+    /* Color-dark */
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+    /* These are custom properties they will start with double - or '--' */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* font-size */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    /* This gives you two shadow hard to tell the difference but it gives a bit of
+    a darker and lighter shadow I would say */
+}
+
+@media (min-width: 870px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+/* General Styles */
+
+
+html{
+    scroll-behavior: smooth;
+    /* An easy way to add smooth scrolling with Js */
+}
+
+
+body{
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    /* Line height the distance between each line/element */
+
+}
+
+section{
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    
+}
+/* Buttons */
+:focus  {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+    /* outline-offset gives some spacing in between the outline */
+}
+/* For all items(links) focused on, there will be an outline around it here */
+
+.btn{
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    border-radius: 4px;
+    transition: transform 200ms ease-in-out;
+
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    /* Buttons becomes bigger upon hover */
+    
+
+}
+strong{
+    font-weight: var(--fw-bold);
+}
+
+
+
+/* Typography */
+
+h1,h2,h3{
+    line-height: 1;
+    margin: 0;
+}
+
+h1{ font-size: var(--fs-h1)}
+h2{ font-size: var(--fs-h2)}
+h3{ font-size: var(--fs-h3)}
+
+
+.section__title{
+    margin-bottom: .25rem;
+
+}
+
+.section__title--intro{
+    font-weight: var(--fw-regular);
+}
+.section__title--intro strong{
+    display: block;
+    /* This will ensure that the 'Benjamin'or strong tag will always be in its own line
+    despite changes in screen size */
+}
+.section__title--intro h2{  
+    white-space: nowrap;
+}
+.section__subtitle{
+    margin: 30px auto;
+    font-size var(--fs-h3);
+
+}
+
+
+
+.section__subtitle--intro,
+.section__subtitle--about{
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em ;
+    /* This here affects the font,size of the grey boxes(e.g NYP student at top of page) */
+}
+
+.section__subtitle--work{
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.logo{
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: red;
+    
+    text-align: center;
+   
+}
+
+.fa-apple-alt,
+.fa-users {
+  font-size: 10rem;
+  /* set size of apple logo */
+}
+
+
+/* header */
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo {
+    max-width: 100px;
+    /* The div section of your apple logo */
+}
+/* Nav bar section */
+.nav{
+    position: fixed;
+    /* Ensures the position is fixed and the links will follow even on scroll */
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* Top,bottom, left, right ensures the nav screen fills up the whole screen*/
+    /* z-index of 100 ensures that the nav screen overlaps everything(highest priority) */
+    transform: translateX(100%);
+    /* translate x transform ensures the nav bar does not appear on the page when close
+    try ajusting 100% to 80% You will see thta 20% of the nav bar remains on the page even when]
+    closed */
+    /* In short translate x moves the nav screen 100% off of the screen */
+    transition: transform 250ms ease-in-out;
+    /* This transition ensures the nav bar takes 0.25 seconds or 250ms to open and close
+     */
+}
+
+.nav__list{
+    list-style: none; /*Removes list style*/
+    display: flex;
+    height:100%;
+    flex-direction: column;
+    /* Arrange all the links in a column instead of it being positioned horizionatlly
+    if you remove this all links will be horizontal instead of vertical */
+    justify-content: space-evenly;
+    /* Ensures all links are spaced evenly */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav__link {
+    /* color inherit it herit the color from its parent which is 
+    .nav which has a color of var(--clr-light) which was set as
+    the color white */
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+.hamburger::before{top: 6px;}
+/* Moves it down 6px */
+.hamburger::after{bottom: 6px;}
+/* moves it up 6px */
+
+
+
+.nav__link:hover{
+    color: var(--clr-accent)
+}
+
+.nav-toggle{
+    padding: .5em;
+    background: transparent;
+    /* Like the name implies it makes the navigation button
+    background transparent, try removing this code and see what happens */
+    border: 0;
+    /* Removes border around button */
+    cursor: pointer;
+    /* cursor:pointer changes the pointer on ur mouse, if u remove this and you hover
+    over the nav button the pointer remains as default */
+    position: fixed;
+    /* Position absolute in a way allows the navigation to remain at its default
+    position and ignore other elements */
+
+    /* Hi me in the future I wanted the Nav Bar to stay in its original place while
+    scrolling down so i changed position to fixed */
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+    /* Nav bar button takes full priority when opened hence It should be positioned above
+    every element hence the z-index of 1000*/
+}
+
+.nav-open .nav{
+    transform: translateX(0);
+    /* This will show the nav page */
+    /* When the nav-open class is triggered it 
+    will trigger this transform:translateX(0) which will then
+    shift the nav screen back hence how opening and closing the nav bar works */
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+    /* Ensures the opened nav button is still following
+    the page when scrolled down */
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn);
+    /* 135deg be the same as 0.625turn check MDN on the conversion rate of these units */
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+    /* It rotates 90deg off .hamburger(after it roatates .625turn) */
+    /* Its because when.hamburger rotates .625turn .hamburger::before also rotates .625turn
+    thats why it rotates 90deg off .hamburger(after it roatates .625turn) */
+    /* TranslateX(-6px) moves it back 6px if u remove
+    it it will be positioned more to the top right when the animation is triggered */
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+    /* The top part of the burger becomes transparent */
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+    /* Position relative helps space out the burgers or span more */
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    /* width and height sets the lines of the nav bar icon */
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+    /* this transition plays the burger(nav icon) animation */
+
+}
+
+
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+    /* sets the 3 lines in the nav bar section */
+    left: 0;
+    right: 0;
+    /* left and right makes sure all lines are positioned
+    at the same starting point */
+    
+
+}
+/* Intro Section */
+
+
+.intro{
+    position: relative;
+}
+
+.intro__img{
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 670px){
+    .intro{
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        /* width:min-content and margin 0 auto sets the intro section in the middle(centers it) */
+        grid-column-gap: 1em ;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+            
+        grid-template-columns: min-content max-content;
+        /* img will be set to min-content
+        however the text(title/subtitle) will be set to
+        max-content */
+    }
+
+
+    .intro__img{
+        grid-area: img;
+        /* set grid-area img for it to follow min-content */
+        min-width: 250px;
+        /* The img will dissapear if a min-width is not set; */
+        position: relative;
+        z-index: 2;
+        /* Ensures the img is above the grey line thing */
+    }
+    .section__subtitle--intro{
+        align-self: start;
+        /* align-self stops the <p> tag from stretching */
+        grid-column: -1 /1;
+        /* grid column starts at -1 ends at column 1(refer to grid diagram
+        for more details */
+        grid-row: 2;
+        /* Puts the <p> tag in like a row section or right next to the img although
+        still no overlapping */
+        text-align: right;
+        /* Pushes text to the right */
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+        /* The width is specifically set to match the words width and
+        box width */
+
+
+    }
+}
+
+/* Services (What I Do) section */
+.my-services{
+    background-color: var(--clr-dark);
+    background-image: url(img/services-bg.jpg);
+    /* Sets the background image of my-services section */
+    background-size: cover;
+    /* Cover makes sure the image does not repeat itself */
+    /* background-blend-mode: multiply; */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--services{
+    color: var(--clr-accent);
+    position:relative;
+}
+
+.section__title--services::after{
+    content: '';
+    /* pseudo elements need a content or they will not appear. display
+    block or position */
+    display:block;
+    width: 2em;
+    height: 1px;
+    /* The width and height create this little line here */
+    margin: 0.5em auto 1em;
+    /* top set to 0.5em, left&right set to auto and bottom set to 1em */
+    background: var(--clr-light);
+    opacity: 0.25;  
+}
+.service{
+    max-width: 1000px;
+    margin-bottom: 2em;
+}
+.services{
+    margin-bottom: 4em;
+    justify-content: center;
+}
+.service h3{
+    margin-bottom: 1em;
+}
+@media (min-width: 800px){
+    .services{
+        display: flex;
+        max-width: 1000px;
+        margin:0 auto;
+        
+    }
+    .service + .service{
+        margin-left: 2em;
+        /* next service it sees it will
+        space out by 2em */
+    }
+}
+
+/* About Me */
+
+.about-me{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img{
+    box-shadow: var(--bs)
+}
+@media (min-width: 680px){
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        /* Sets title,subtitle,text size to 1fr and
+        img to 300px */
+        grid-column-gap: 2em;
+        /* gap gives some spacing between the img and text */
+    }
+    .section__title--about{
+        grid-area: title;
+        /* sets grid-area for title */
+    }
+
+    .section__subtitle--about{
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        right: 0.1em;
+        /* Pushes the bar to the right by 0.1em*/
+        width: calc(100% + 2em);
+        /* Sets the length of the grey bar thing */
+
+    }
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+        /* without either position relative or z-index:2 the green line will go above the image
+        hence covering it add either z-index or position relative or both just to be safe to
+        ensure image appears above line or message grey bar thing */
+    }
+
+}
+.about-me__body{
+    font-family: var(--ff-primary);
+}
+
+/* Card */
+#cardFlip{
+    background-color: lightgrey;
+    height: 85vh;
+    /* Sets the height of the section */
+    display: flex;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.card{
+    width: 400px;
+    /* Width of card is 400px */  
+}
+
+.card__content{
+    text-align: center;
+    /* Ensures all text are centered */
+    position: relative;
+    padding: 5em;
+    transition: transform 3s;
+    /* The card makes a full 180 deg turn after 3s */
+    transform-style:preserve-3d;
+    /* preserve-3d gets the 3d effects to work properly */
+    /* backface-visibility:hidden seems to not work
+    properly without the preserve 3d; */
+}
+.card:hover .card__content{
+    transform: rotateY(180deg);
+    /* On hover the card roatates 180deg */
+}
+.card__front,
+.card__back{
+    position: absolute;
+    /* Ensures position is absolute */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* Ensures the back and front of the card
+    take up the same width and height of the card itself */
+    /* The card had no background set so without the top,right,bottom
+    left the dimensions of the card would look distored to the user */
+    backface-visibility: hidden;
+    /* Ensures the backfac-visibility of
+    both cards are hidden. In this case no problem
+    because both cards have set backgrounds but placed
+    just in case to prevent any weird errors */
+    padding: 12em 3em;
+    transform-style:preserve-3d;
+    /* Ensures the front and back of the card 3d effects also
+    work properly */
+    align-content: center;
+    /* Ensures all the content appear in the center
+    if removed all the elements may dissapear or appear to be weird */
+}
+.card__front{
+    /* Placeholder image */
+    background: url('https://unsplash.it/500/500') ;
+    /* generates a random image from unsplash every refresh
+    dimensions of the image are set 500 to 500 */
+    background-size:cover;
+    /* Makes sure  dimensions of the background cover
+    the card in case height and width aren't perfect */
+    background-repeat: no-repeat;
+    /* Makes sure the background does not repeat itself
+    in case of some weird width and heights */
+    background-position:center center;
+    /* makes sure the front of the card is centered */
+    color: white
+}
+
+.card__front::before{
+    /* The white 3d border around the card */
+    content: '';
+    /* pseudeo elements('before') needs cotent to
+    have an empty string */
+    position: absolute;
+    /* Ensures position is absolute */
+    border: 3px currentColor solid;
+    /* Sets the border to current color('which is white)
+     solid */
+    top: 1em;
+    right: 1em;
+    left: 1em;
+    bottom: 1em;
+    /* Sets the border so called raidus or dimensions
+    its 1em away from the sides. If top,left,right,bottom
+    were set to 0 they be directly on the edge of the card
+     */
+    transform: translateZ(3em);
+    /* Makes this border thing pop up by 3em */
+}
+.card__title{
+    font-size: 3em;
+    transform: translateZ(200px);    
+    text-transform: uppercase;
+    /* Some changes to font-size and to all uppercase for
+    title('HI THERE') also it pops out by 200px */
+}
+
+.card__subtitle{
+    transform: translateZ(4rem);
+    /*The subtitles('Time for some fun') pops out
+    by 4rem  */
+}
+.card__body{
+    transform: translateZ(3rem);
+    /* Ensure the back of the card("Enjoying the site 
+    so far?") pops out by 3rem */
+}
+
+.card__back{
+    transform: rotateY(.5turn);
+    /* .5turn = 180deg turn ensure the front and back of the card
+    are facing at opposite directions if removed the
+    front and back of the card will overlay/contradict? one another. */
+    background: black;
+    color: white;
+}
+
+
+/* footer */
+
+#top{
+    transition: all 0.3s ease;
+    font-weight: var(--fw-bold);
+}
+#top:hover{
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+#footerLink{
+    transition: all 0.3s ease;
+    font-weight: var(--fw-bold);
+}
+#footerLink:hover{
+    font-size: 1.25em;
+    text-decoration: underline;
+
+}
+
+.footer{
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+    /* Basic styling for footer */
+}
+
+.footer a{ 
+    color: inherit;
+    /* color which is var(--clr-accent) inheritted from footer */
+    text-decoration: none;
+}
+.social-list__link:hover {
+    opacity: .7;
+    /* makes social icons slightly transparent upon hover */
+}
+
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+
+}
+
+.social-list__item{
+    margin: 0 .5em;
+}
+
+.social-list__link{
+    padding: .5em;
+    transition: all 0.3s ease;
+}
+.social-list__link:hover{
+    font-size: 1.5em;
+}
+
+
+

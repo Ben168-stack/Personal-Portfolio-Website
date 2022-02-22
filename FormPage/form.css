@@ -1,0 +1,639 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* Custom Properties, Update these for your own design */
+
+:root{
+    --ff-primary:'Source Sans Pro',sans-serif;
+    --ff-secondary:'Source Code Pro', monospace;
+    /* font family */
+    /* font weight */
+    --fw-regular: 300;
+    --fw-bold: 900;
+    /* color-light */
+    --clr-light: #fff;
+    /* Color-dark */
+    --clr-dark: #303030;
+    --clr-accent: #16e0bd;
+    /* These are custom properties they will start with double - or '--' */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* font-size */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.25em rgba(0,0,0,.15);
+    /* This gives you two shadow hard to tell the difference but it gives a bit of
+    a darker and lighter shadow I would say */
+}
+
+@media (min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+/* General Styles */
+
+
+html{
+    scroll-behavior: smooth;
+    /* An easy way to add smooth scrolling with Js */
+}
+
+
+body{
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    /* Line height the distance between each line/element */
+
+}
+
+section{
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    
+}
+/* Buttons */
+:focus  {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+.btn{
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    border-radius: 4px;
+    transition: transform 200ms ease-in-out;
+
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    
+
+}
+strong{
+    font-weight: var(--fw-bold);
+}
+
+
+
+/* Typography */
+
+h1,h2,h3{
+    line-height: 1;
+    margin: 0;
+}
+
+h1{ font-size: var(--fs-h1)}
+h2{ font-size: var(--fs-h2)}
+h3{ font-size: var(--fs-h3)}
+
+
+.section__title{
+    margin-bottom: .5em;
+
+}
+
+.section__title--intro{
+    font-weight: var(--fw-regular);
+    
+}
+.section__title--intro strong{
+    display: block;
+    
+}
+.section__title--intro h2{
+    
+    white-space: nowrap;
+}
+.section__subtitle{
+    
+    font-size var(--fs-h3);
+
+}
+
+
+
+.section__subtitle--intro,
+.section__subtitle--about{
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em ;
+}
+
+.section__subtitle--work{
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+/* header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo {
+    max-width: 100px;
+
+}
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+}
+
+.nav__list{
+    list-style: none;
+    display: flex;
+    height:100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+
+    
+}
+
+.hamburger::before{top: 6px;}
+.hamburger::after{bottom: 6px;}
+
+
+
+.nav__link:hover{
+    color: var(--clr-accent)
+}
+
+.nav-toggle{
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav{
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger{
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.hamburger{
+    
+    display: block;
+    position: relative;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+
+}
+
+
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+
+}
+
+
+
+/* Intro Section */
+
+
+.intro{
+    position: relative;
+}
+
+.intro__img{
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px){
+    .intro{
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em ;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+            
+        grid-template-columns: min-content max-content;
+    }
+
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+    .section__subtitle--intro{
+        align-self: start;
+        /* align-self stops the <p> tag from stretching */
+        grid-column: -1/1;
+        /* This will stretch the img across, to prevent overlapping however
+        the <p> tag appears under the img  */
+        grid-row: 2;
+        /* Puts the <p> tag in like a row section or right next to the img although
+        still no overlapping */
+        text-align: right;
+        /* Pushes text to the right */
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+
+
+    }
+}
+
+
+/* Welcome message/summary(about me) */
+.about-me{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img{
+    box-shadow: var(--bs)
+}
+@media (min-width: 680px){
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+    .section__title--about{
+        grid-area: title;
+    }
+
+    .section__subtitle--about{
+        grid-column: 1 / -1;
+        /* grid-column ends at -1 so that the grey bar passes through the image
+        a small bit; */
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px+4em)
+        /* padding-right makes sure the text never touches the image */
+
+    }
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+
+    
+
+}
+.about-me__body{
+    font-family: var(--ff-primary);
+}
+
+/* Schedule Table*/
+.content-table{
+    margin: 50px auto;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px grey;
+    /* Sets the shadow of the table */
+}
+.content-table caption{
+    margin-bottom: 20px;
+    border: 1px solid grey;
+    background-color: grey;
+    /* Sets background and border for captions section */
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 20px grey;
+}
+.content-table thead tr{
+    background-color: #009879;
+    color: white;
+    /* Sets background color and text color
+    for the thead or th section */
+    /* text-align: left; */
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+    /* Some default padding for th and td */
+
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+    /* Sets a border for the bottom of his tr in tbody
+    section */
+}
+
+.content-table tbody tr:nth-child(2){
+    /* Selects only the 2nd child in the list */
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-child{
+    border-bottom: 2px solid #009879;
+    /* Sets an outline for the bottom of
+    the table */
+}
+/* Some media queries to adjust height of
+table depending on size of screen */
+@media(max-width:710px){
+    .content-table{
+        font-size: 0.7em;
+    }
+    /* If the size of the screen falls below 710px
+    the font-size is changed to 0.7em */
+    
+}
+@media(max-width:600px){
+    .content-table{
+        font-size: 0.45em;
+    }
+    /* If the size of the screen falls below 600px
+    the font-size is changed to 0.7em */
+}
+
+
+/* Form Section*/
+
+#formSection{
+    height: 120vh;
+    /* Sets height of form */
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    width: 90%;
+    /* Sets width of the form */
+    max-width: 500px;
+    /* Set min width so that form is not spaced out */
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 0px 20px grey;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+   
+}
+
+.form-group{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    /* Sets default form size for headers(h1,h2,est) 
+    give some spacing away from each other with margin*/
+}
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    /* Ensures all textbox by default reaches the end of the row
+    of the form(will look very weird without it) */
+    padding: 5px;
+    font-size: 18px;
+    /* Default font-size for text in the textarea; */
+    border: 1px solid grey;
+    /* Sets the border around the textboxes */
+    margin-top: 5px;
+    /* A little more spacing between headers and textboxes */
+}
+textarea{
+    resize: vertical;
+    /* This means the resize for textarea only works 
+    vertically */
+}
+button[type='submit']{
+    /* Sets some styling for the button */
+    width: 100%;
+    /* Ensures button screen reaches end of the form(will look
+    weird without it) */
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 8px;
+    color: blueviolet;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease background-color;
+    /* transtion has 0.3s delay and only affects 
+    background-color */
+}
+button[type='submit']:hover{
+    background-color: rgba(135, 206, 250, 0.469);
+    /* sets the background color upon hover */
+}
+#status{
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    /* Sets where and the style of the
+    display message upon submiting or failing to
+    submit the form. */
+}
+
+#status.success{
+    background-color:lightgreen;
+    animation: status 4s ease forwards;
+    /* If the form submitted was a success(no errors)
+    a background of lightgreen will appear at the bottom
+    and the animation status will play */
+}
+#status.error{
+    background-color: red;
+    color: white;
+    animation: status 4s ease forwards;
+    /* After 4 seconds the message will become hidden 
+    because opacity(how transparent something is) is 0*/
+}
+
+@keyframes status{
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+    /* The text will dissapear(because opacity:0
+    meaning transparent) at the end of the animation*/
+    
+}
+
+
+/* footer */
+#top{
+    transition: all 0.3s ease;
+    font-weight: var(--fw-bold);
+}
+#top:hover{
+    font-size: 1.25em;
+    text-decoration: underline;
+}
+
+.footer{
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+    
+}
+
+.footer a{ 
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.footer__link{
+    font-weight: var(--fw-bold);
+    transition: 0.3s ease-in;
+}
+
+
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .7;
+
+}
+
+.footer__link:hover{
+    text-decoration: underline;
+    font-size: 1.25em;
+}
+
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+
+}
+
+
+.social-list__item{
+    margin: 0 .5em;
+}
+
+.social-list__link{
+    padding: .5em;
+    transition: all 0.3s ease;
+}
+.social-list__link:hover{
+    font-size: 1.5em;
+}
+
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual{
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    
+    margin-left:auto;
+    margin-right: auto;
+}

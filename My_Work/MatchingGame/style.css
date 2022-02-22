@@ -1,0 +1,179 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 120px 0;
+  background: #6589F9;
+  
+}
+.title{
+  color: yellow;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 4em;
+  text-align: center;
+}
+form{
+  text-align: center;
+}
+#restart{
+  border-radius: 10px;
+  padding: 8px;
+  border: none;
+  color: white;
+  background-color: blueviolet;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+  visibility:hidden;
+}
+#restart:hover{
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+.grid {
+  max-width: 960px;
+  /* Makes the max width be 960px meaning only 6 cards at most can be displayed per row */
+  /* Without setting the max-width the cards will be displayed in a disordered manner */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* Just to make sure cards are spaced evenly */
+}
+
+.card {
+  position: relative;
+  transition: all .4s linear;
+  /* Ensures there is a transition delay when the cards to show the cards turning */
+  transform-style: preserve-3d;
+  /* Ensures the 3D animations are preserved */
+  /* In a complicated sense preserved 3d will ensure the card is independent in the 3D space without it the cards
+  won't flip properly */
+  /* Its like the front of the card(currently hiding at the back) will only behave like its at the back if preserve 3d is there
+  anot it will behave as if everything was 2d(all facing the front) and the turns won't behave properly.
+  Imagine if the back of the card and the front of the card were all somehow facing the front
+  it would not be 3d, thats why preserve 3d must be used */
+
+  /* Elements will rotate relative to its parent */
+  margin: 5px;
+}
+
+.front{
+  cursor: pointer;
+}
+.card,
+.back,
+.front {
+  height: 150px;
+  width: 150px;
+  /* Sets the width and height of the cards */
+}
+
+.back,
+.front {
+  position: absolute;
+  /* Ensure images of cards appear at the back */
+  backface-visibility: hidden;
+  /* Ensures the backface of the front and back of the cards are hidden */
+  /* This will vary depending on the image sizes but if you look closely u can see some
+  of the images overflowing out of the back of the card(div) backface-visibility: hidden will solve this problem; */
+}
+
+.front {
+  z-index: 2;
+  background: #FAB942 no-repeat center center / contain;
+  /* Ensures background of front of the card are centered(without this the cards may dissapear,do not repeat and do not overflow */
+}
+
+.back {
+  transform: rotateY(180deg);
+  /* Ensures the back card is facing the back/opposite side of the front at the start */
+  background-color: #6589F9;
+  background-size: contain;
+  /* contain ensure background size is within the div */
+  background-repeat: no-repeat;
+  /* This is just to make sure background does not repeat itself */
+  background-position: center center;
+  /* ensures background is positioned in the center(in case of some weird image sizes) */
+  /* in some special cases the image may be too small or too large, background-repeat:no-repeat
+  and background position center center makes sure all images are properly centered and do no appear
+  twice; */
+}
+
+.selected {
+  transform: rotateY(180deg);
+  /* Ensures cards rotate when clicked*/
+  /* When selected class is removed after timeout the cards will fliped */
+}
+
+.match .front {
+  background: #6589F9 !important;
+  /* When there is a match, it will add the match
+  class to the div which will in turn make the 
+  card invisible(turns the front part of the card the background color therefore
+  making it 'invisable' */
+}
+p{
+  margin-left: 32%;
+  color: yellow;
+  font-size: 1.5em;
+}
+h2{
+  text-align: center;
+  color: yellow;
+}
+
+@media(max-width:900px){
+  .card,
+  .back,
+  .front {
+  height: 120px;
+  width: 120px;
+}
+}
+@media(max-width:800px){
+  .card,
+  .back,
+  .front {
+  height: 100px;
+  width: 100px;
+}
+}
+@media(max-width:750px){
+  .card,
+  .back,
+  .front {
+  height: 80px;
+  width: 80px;
+}
+}
+
+@media(max-width:720px){
+  .card,
+  .back,
+  .front {
+  height: 70px;
+  width: 70px;
+}
+}
+@media(max-width:700px){
+  .card,
+  .back,
+  .front {
+  height: 65px;
+  width: 65px;
+}
+}
+
+@media(max-width:680px){
+  .card,
+  .back,
+  .front {
+  height: 50px;
+  width: 50px;
+  
+}
+
+}

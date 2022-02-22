@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tan Ch'ing Jui Benjamin">
+    <meta name="keywords" content="Intro,Summary,Time Table,Contact Form,Footer">
+    <meta name="description" content="Benjamin's Contact Page!">
+    <title>Form Page</title>
+    <script
+      src="https://kit.fontawesome.com/57c1bc4a0b.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="form.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="../img/DeveloperIcon.svg">
+  </head>
+  <body>
+      <header>   
+        <img src="../img/DeveloperIcon.svg" alt="Dev Icon" height="120px">  
+          <button class="nav-toggle" aria-label="Toggle Navigation">
+              <span class="hamburger"></span>
+          </button>
+          <nav class="nav"> 
+              <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">Welcome Message</a></li>
+                <li class="nav__item"><a href="#schedule" class="nav__link">My Schedule</a></li>
+                <li class="nav__item"><a href="../Portfolio/portfolio.html" class="nav__link">My Projects</a></li>
+                <li class="nav__item"><a href="#formSection" class="nav__link">Contact Me</a></li>
+                <li class="nav__item"><a href="#Footer" class="nav__link">Footer</a></li>
+              </ul>
+          </nav>
+      </header>
+      
+       <!-- Introduction -->
+       <section class="intro" id="home">
+        <h1 class="section__title section__title--intro" id="type" class="Text">
+           <strong>Contact Me</strong><br>   
+        </h1>
+        
+        <p class="section__subtitle section__subtitle--intro">Drop me a message!</p>
+        <img src="../img/cat2.jpg" alt="Picture of a Cat" class="intro__img">
+        </section>
+      <hr>
+        <!-- Summary -->
+      
+      <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Hello!</h2>
+        <p class="section__subtitle section__subtitle--about">Hello Friend :)</p>
+
+        <div class="about-me__body">
+            <p>Why hello there friend, feel free to drop me a message here. I'm not always on 
+                so I left a timetable on when I'm at school and when I'm usually on. I might not be
+                able to reply to you all but I will try my best.
+            </p>
+            <p></p>
+        </div>
+        <img src="../images/Default3.jpg" alt="An Image of me" class="about-me__img">
+    </section>
+    <hr>
+    <!-- My Schedule -->
+    <div id="schedule">
+      <table class="content-table" >
+        <caption>My Schedule</caption>
+        <thead>
+        <tr>
+        <th><sub>Time</sub>\<sup>Day</sup></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thurday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+        <th>12:00am<br>to<br>7:00am</th>
+        <td colspan="5">Sleep</td> 
+        <td rowspan="2" colspan="2">Slack..Dream..</td>
+        </tr>
+
+        <tr>
+        <th rowspan="2">8:00am<br>to<br>6:30pm</th>
+        <td colspan="5" rowspan="2">School Time<br>(Try finish all homework during breaks)</td>
+        </tr>
+
+        <tr>
+        <td colspan="2">Friends Time</td>
+        <!-- Since 8 to 6:30 and school time have a rowspan of 2, technically
+        friends time is on the next row but it appears to be in the same row as them
+       -->
+        </tr>
+
+        <tr>
+        <th>7:00pm<br>to<br>10:00pm</th>
+        <td colspan="5">Free Time</td>
+        <td colspan="2">Family Time</td>
+        </tr>
+      </tbody>
+        </table>
+    </div>
+<!-- Form -->
+<section id="formSection">
+<div class="container">
+  <h3>Contact me here!</h3>
+  <form action="https://formspree.io/f/mrgraald" method="POST" id="my-form">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name='firstName' class="firstName" required placeholder="Enter your first name">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email here if you want me to reply back :)">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea name="message" id="message" cols="30" rows="10" required placeholder="Drop me a message or query here. :)"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div id="status"></div>
+</section>
+
+<footer class="footer" id="Footer">
+  <!-- Replace with your own email -->
+<a href="#formSection" id="footerLink" class="footer__link">Hello@Ben.dev</a>
+<ul class="social-list">
+<li class="social-list__item">
+    <a href="https://codepen.io/ben168-stack" class="social-list__link" target="_blank" ><i class="fab fa-codepen" aria-label="Codepen logo"></i></a></li>
+<li class="social-list__item">
+    <a href="https://www.instagram.com/benjamintanchingjui168/" class="social-list__link" target="_blank" ><i class="fab fa-instagram" aria-label="Instagram logo"></i></a></li>
+<li class="social-list__item">
+    <a href="https://twitter.com/?lang=en" class="social-list__link" target="_blank" ><i class="fab fa-twitter" aria-label="Twitter logo"></i></a></li>
+<li class="social-list__item">
+    <a href="https://github.com/Ben168-stack/" class="social-list__link" target="_blank" ><i class="fab fa-github" aria-label="Github logo"></i></a></li>
+</ul>
+<a href="#home" id="top">Back to Top</a>
+</footer>
+    <script src="form.js"></script>
+    </body>
+</html>

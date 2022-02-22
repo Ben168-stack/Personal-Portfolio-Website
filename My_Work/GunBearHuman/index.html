@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tan Ch'ing Jui Benjamin">
+    <meta name="keywords" content="Bear,Gun,Human,Rules">
+    <meta name="description" content="Bear Gun Human Game similar to rock paper scissors">
+    <title>Gun Bear Human</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg" href="./images/bear.svg">
+</head>
+<body>
+    <header>
+    <h1>Gun Bear Human</h1>
+    </header>
+    <div class="score-board">
+        <div id="user-label" class="badge">User</div>
+        <div id="computer-label" class="badge">Comp</div>
+        <span id="user-score">0</span>:<span id='computer-score'>0</span>
+    </div>
+    
+    <div class="result">
+        <p></p>
+    </div>
+    
+    <div class="choices">
+        <div class="choice" id="g">
+            <img src="./images/gun.svg" alt="Gun" height="130px">
+        </div>
+        <div class="choice" id="b">
+            <img src="./images/bear.svg" alt="Bear"height=" 130px" >
+        </div>
+        <div class="choice" id="h">
+            <img src="./images/hunter.svg" alt="Human" height="130px">
+        </div>
+    </div>
+    <p id="action-message">Make Your Move</p>
+    
+    <script src="script.js"></script>
+
+    <div id="instructions">
+        <p>The Rules</p>
+        <ul>
+            <li>Gun beats Bear</li>
+            <li>Bear beats Human</li>
+            <li>Human beats Gun</li>
+        </ul>
+    </div>
+</body>
+</html>

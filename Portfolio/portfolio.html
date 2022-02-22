@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Page</title>
+    <meta name="author" content="Tan Ch'ing Jui Benjamin">
+    <meta name="keywords" content="Intro,Summary,Project description,My Works/Projects,Footer">
+    <meta name="description" content="Benjamin's Projects!">
+    <link rel="icon" type="image/jpg" href="../img/headphones.svg">
+    <script
+      src="https://kit.fontawesome.com/57c1bc4a0b.js"
+      crossorigin="anonymous"
+     
+    ></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+  
+  </head>
+  <body>
+      <header> 
+        <img src="../img/headphones.svg" alt="headphones" height="120px">    
+          <button class="nav-toggle" aria-label="Toggle Navigation">
+              <span class="hamburger"></span>
+          </button>
+          <nav class="nav"> 
+              <ul class="nav__list">
+                <li class="nav__item"><a href="../index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About My Projects</a></li>
+                <li class="nav__item"><a href="#ThoughtProcess" class="nav__link">My Thought Process</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+                <li class="nav__item"><a href="../FormPage/Form.html" class="nav__link">Contact Me</a></li>
+                <li class="nav__item"><a href="#Footer" class="nav__link">Footer</a></li>
+              </ul>
+          </nav>
+      </header>
+   
+       <!-- Introduction -->
+       <section class="intro" id="home">
+        <h1 class="section__title section__title--intro" id="type" class="Text">
+           <strong>My Project</strong>
+        </h1>
+        
+        <p class="section__subtitle section__subtitle--intro">Welcome Buddy</p>
+        <img src="../img/Professor.jpg" alt="Professor/Hakase from Nichijou" class="intro__img">
+        </section>
+      <hr>
+        <!-- Summary -->
+      
+      <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">Hi There!</h2>
+        <p class="section__subtitle section__subtitle--about">Its Me! Again.. Hellooo</p>
+
+        <div class="about-me__body">
+            <p>Hello again, welcome to my projects. On this page I want to share more on my thought process while working on these applications and 
+              why I started working on these applications. I truly enjoyed making these applications and hope
+              you will like them too.
+            </p>
+            <p></p>
+        </div>
+        <img src="../images/Default2.jpg" alt="A picture of me in a blue jacket" class="about-me__img">
+    </section>
+    
+    <div class="bColor" id="ThoughtProcess">
+      
+      <h2>My Thought Process</h2>
+      <div id="pBColorMatchingGame">
+        <div class="portfolio-item-individual">
+            
+            <h3>The Matching Game🎉</h3>
+            <img src="../img/matchingGame2.jpg" alt="Image of Matching game">
+            <p>This is the first application I made in my list of Projects. 
+              I followed a tutorial on a course I got on Udemy,this was one of the applications in the course.</p>
+            <p>I had to use for loops to create the many divs(folding cards) of this application and some DOM elements.
+              It was pretty intimidating as this was new territory to me but I learnt alot at the end and was able to finish it.
+            </p>
+        </div>
+      </div>
+      <div id="pBColorMagicBroom">
+        <div class="portfolio-item-individual">
+            <h3>Magic Broom✨🧹🧙‍♂️</h3>
+            <img src="../img/magicBroom2.jpg" alt="Image of Magic Broom">
+            <p>This is the Second application I made for this portfolio. This one is much less complicated. It was mostly just some simple CSS and animations.</p>
+            <p>Some stuff I was unfamilar with were animation variable names @keyframes transfrom:translate Y, est.However they weren't too difficult
+              to pick up and I learnt even more stuff aftering finishing it.
+            </p>
+        </div>
+      </div>
+      <div id="pBMagic8Ball">
+        <div class="portfolio-item-individual">
+            <h3>Magic 8 Ball🎱</h3>
+            <img src="../img/magic8ball2.jpg" alt="Image of Magic 8 ball">
+            <p>This is my Third Application I made and its a magic 8 ball. I found a tutorial on Youtube credits to "Carla Notarobot" <a href="https://www.youtube.com/watch?v=wlcoJVn8y3I&t=32s" target="_blank" style="color: red;">https://www.youtube.com/watch?v=wlcoJVn8y3I&t=32s</a>
+              I thought that a magic 8 ball application would be pretty interesting and I created a similar application using switches on console before and wanted to recreate it
+              on a webpage
+            </p>
+            <p>I would say the main challenge was how to get the Javascript working on a site and ensure it still looks visually appealing. In the Tutorial I used buttons in HTML to run
+              a function in Javascript which both writes a message with .innerHTML and creates a class which causes an animation to run in the css code.As for the animation I used @keyframes
+              and the ball in a way jiggle up and down if you look at my code there is a pattern I did in the animation giving it a shake like animation. Again more things I learnt and got to practice
+              on while making this application. 
+            </p>
+        </div>
+      </div>
+      <div id="pB_GBH">
+        <div class="portfolio-item-individual">
+            <h3>Gun Bear Human🔫🐻🧍</h3>
+            <img src="../img/GunBearHuman2.jpg" alt="Image of Gun Bear Human">
+            <p>This is the final application for my portfolio and It may be the one I'm most proud of. I made a game similar to Rock Paper Scissors before Call Gun Bear Human
+              I coded it into the console before using functions and if and else if, est. If you are interested here is a link to my Github to get the code https://github.com/Ben168-stack/Gun-Bear-Human-ConsoleVersion/tree/main 
+            </p>
+            <p>I was wondering how I could code this onto my website and still make it look visually appealing. So I followed through some rock paper scissors tutorials
+              on Youtube and changed some of the Javascript code to meet the output I want and of course change the images to something more fitting to the game I wanted to create.
+              In the end I used Switches which I learnt from my time in NYP and some DOM elements such as .innerHTML, and es6 code like 'let' or 'const' or backticks ``.
+              Learnt alot from this application and was able to put what I learnt in school to make this application. I was even able to make a scoreBoard. I hope to make
+              more cool stuff in the future and use what I learnt from these applications.
+            </p>
+        </div>
+      </div>
+      </div>  
+        <!-- My Work -->
+      <section class="my-work" id='work'>
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">A selection of my range of work</p>
+        <!-- Portfolio item 1 -->
+        <div class="portfolio">
+            <a href="../My_Work/MatchingGame/index.html" class="portfolio__item" target="_blank">
+                <img src="../img/matchingGame.jpg" alt="Image of Matching game" class="portfolio__img">
+        <!-- Portfolio item 2 -->
+        
+            <a href="../My_Work/MagicBroom/index.html" class="portfolio__item" target="_blank">
+                <img src="../img/magicBroom.jpg" class="portfolio__img" alt="Image of Magic Broom">
+        <!-- Portfolio item 3 -->
+        
+            <a href="../My_Work/Magic8Ball/index.html" class="portfolio__item" target="_blank">
+                <img src="../img/magic8ball.jpg" alt="Image of Magic 8 Ball" class="portfolio__img" alt>
+        <!-- Portfolio item 4 -->
+        
+            <a href="../My_Work/GunBearHuman/index.html" class="portfolio__item" target="_blank">
+                <img src="../img/GunBearHuman.jpg" alt="Image of Gun Bear Human" class="portfolio__img">
+        </div>
+    </section>
+    <main>
+      
+      <!-- Footer -->
+      <footer class="footer" id="Footer">
+        <!-- Replace with your own email -->
+      <a href="../FormPage/Form.html" id="footerLink">Hello@Ben.dev</a>
+      <ul class="social-list">
+      <li class="social-list__item">
+          <a href="https://codepen.io/ben168-stack" class="social-list__link" target="_blank" ><i class="fab fa-codepen" aria-label="Codepen logo"></i></a></li>
+      <li class="social-list__item">
+          <a href="https://www.instagram.com/benjamintanchingjui168/" class="social-list__link" target="_blank" ><i class="fab fa-instagram" aria-label="Instagram logo"></i></a></li>
+      <li class="social-list__item">
+          <a href="https://twitter.com/?lang=en" class="social-list__link" target="_blank" ><i class="fab fa-twitter" aria-label="Twitter logo"></i></a></li>
+      <li class="social-list__item">
+          <a href="https://github.com/Ben168-stack/" class="social-list__link" target="_blank" ><i class="fab fa-github" aria-label="Github logo"></i></a></li>
+      </ul>
+      <a href="#home" id="top">Back to Top</a>
+    </footer>
+      <script src="Port.js"></script>
+  </body>
+</html>
